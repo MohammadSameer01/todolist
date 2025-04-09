@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --ffPoppins: "Poppins", sans-serif;
+  --ffNunitoSans: "Nunito Sans", sans-serif;
+
+  --pendingBG: #ffa500;
+  --completedBG: #28a745;
+  --urgentActionBG: #dc3545;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ffPoppins);
+  user-select: none;
+}
+svg {
+  height: 24px;
+}
+li {
+  list-style: none;
+}
+/*  */
+header {
+  height: 60px;
+  align-content: center;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  width: fit-content;
+  max-height: 100%;
+  gap: 8px;
+}
+.logo-container h1 {
+  font-size: 1.5em;
+}
+/*  */
+.container {
+  padding: 12px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  position: relative;
+  background: rgb(245, 245, 245);
+  border-radius: 12px;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+}
+.row label {
+  position: absolute;
+  background: rgb(245, 245, 245);
+  padding-left: 18px;
+  width: 100%;
+  left: 0;
+  transition: all 0.3s ease;
+  height: 100%;
+  align-content: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.row #input-box {
+  width: calc(100% - 85px);
+  padding: 16px;
+  font-size: 1em;
+  border: 0;
+  background: transparent;
+}
+.row #input-box:focus {
+  outline: 0;
+}
+.labelActive {
+  font-size: 0.7em;
+  transform: translate(-12px, -40px);
+  transition: transform 0.3s ease, font-size 0.3s ease;
+  background: none !important;
+  height: unset;
+}
+
+#addButton {
+  position: absolute;
+  background: #007bff;
+  color: white;
+  font-size: 1em;
+  right: 0;
+  height: 100%;
+  width: 100px;
+  border: 0;
+  border-radius: 36px 12px 12px 36px;
+  transition: 0.3s ease;
+}
+#addButton:active {
+  background: #0056b3;
+}
+/*  */
+.tasks-container {
+  padding: 4px;
+}
+.tasks-ul {
+  display: flex;
+  flex-direction: column;
+}
+.tasks-ul li {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  margin-bottom: 6px;
+}
+.task-text {
+  position: relative;
+  max-width: calc(100% - 32px);
+  padding-right: 6px;
+  user-select: text;
+}
+.task-text::before {
+  content: "";
+  position: absolute;
+  height: 32px;
+  aspect-ratio: 1;
+  background: url(assets/unchecked.png);
+  right: -32px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+.task-Extra-Info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+.task-Status {
+  background: var(--pendingBG);
+  font-size: 0.75em;
+  border-radius: 6px;
+  padding: 6px;
+}
+.task-Time {
+  font-size: 0.75em;
+  display: grid;
+  place-items: center;
+  padding: 6px;
+  color: #444;
+}
+/*  */
+li.completed {
+  margin-bottom: 24px;
+}
+li.completed .task-text {
+  text-decoration: line-through;
+}
+li.completed .task-text::before {
+  background: url(assets/checked.png);
+  background-size: contain;
+}
+li.completed .task-Status {
+  background: var(--completedBG);
+  color: white;
+}
+/*  */
+.date-header {
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 4px;
+}
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/*  */
+/*  */
+.delete-button {
+  margin-left: 10px;
+  padding: 6px 18px;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: fit-content;
+  margin-top: 26px;
+  position: absolute;
+  right: 24px;
+}
+
+.delete-button:hover {
+  background-color: #cc0000;
+}
+
+.completed .delete-button {
+  display: inline-block;
+}
+/*  */
+/*  */
+.row-2 {
+  margin-top: 16px;
+}
+.tasks-count-container {
+  display: flex;
+  gap: 12px;
+}
+.pending-tasks-cnt,
+.completed-tasks-cnt {
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.pending-tasks-cnt span:nth-child(1),
+.completed-tasks-cnt > span:nth-child(1) {
+  font-size: 0.8em;
+  align-content: center;
+}
+.pending-tasks-cnt {
+  background: var(--pendingBG);
+}
+.completed-tasks-cnt {
+  background: var(--completedBG);
+  color: white;
+}

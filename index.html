@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Meta Description -->
+    <meta
+      name="description"
+      content="A simple, intuitive To-Do List app to manage tasks efficiently. Add, track, and complete tasks with dates, statuses, and swipe gestures. Try it now!"
+    />
+    <!-- Keywords -->
+    <meta
+      name="keywords"
+      content="to-do list, task manager, productivity app, task tracker, daily planner"
+    />
+    <!-- Author -->
+    <meta name="author" content="Mohammad Sameer" />
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph Tags for Social Sharing -->
+    <meta
+      property="og:title"
+      content="ToDoList - Manage Your Tasks Efficiently"
+    />
+    <meta
+      property="og:description"
+      content="Organize your day with this simple To-Do List app featuring task statuses, dates, and swipe-to-complete functionality."
+    />
+    <meta property="og:image" content="/assets/icon.png" />
+    <meta
+      property="og:url"
+      content="https://mohammadsameer01.github.io/todolist"
+    />
+    <meta property="og:type" content="website" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="ToDoList - Manage Your Tasks Efficiently"
+    />
+    <meta
+      name="twitter:description"
+      content="A lightweight app to manage tasks with dates, statuses, and swipe gestures."
+    />
+    <meta name="twitter:image" content="/assets/icon.png" />
+    <!-- Title -->
+    <title>ToDoList - Task Manager & Productivity App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="/assets/icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path
+            d="M152.1 38.2c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 113C-2.3 103.6-2.3 88.4 7 79s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zm0 160c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zM224 96c0-17.7 14.3-32 32-32l224 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-224 0c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32l224 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-224 0c-17.7 0-32-14.3-32-32zM160 416c0-17.7 14.3-32 32-32l288 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-288 0c-17.7 0-32-14.3-32-32zM48 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+          />
+        </svg>
+        <h1>ToDoList</h1>
+      </div>
+    </header>
+    <main>
+      <section class="container">
+        <div class="to-do-list-container">
+          <div class="row">
+            <input
+              type="text"
+              id="input-box"
+              placeholder="what's the next task..."
+            />
+            <label for="input-box"> + Add New Task</label>
+            <button id="addButton">Add</button>
+          </div>
+          <div class="row-2">
+            <div class="tasks-count-container">
+              <div class="pending-tasks-cnt">
+                <span>Pending tasks</span>
+                <span class="pending-count">00</span>
+              </div>
+              <div class="completed-tasks-cnt">
+                <span>Completed tasks</span>
+                <span class="completed-count">00</span>
+              </div>
+            </div>
+          </div>
+          <div class="tasks-container">
+            <ul class="tasks-ul">
+              <!-- List items here -->
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="script.js"></script>
+</html>

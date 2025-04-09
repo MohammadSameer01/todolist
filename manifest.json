@@ -1,0 +1,18 @@
+{
+  "name": "ToDoList",
+  "short_name": "ToDo",
+  "description": "A simple To-Do List app to manage tasks efficiently.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
+  "icons": [
+    {
+      "src": "/assets/icon.png",
+      "sizes": "100x100",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "portrait",
+  "scope": "/"
+}
