@@ -4,6 +4,9 @@
   --ffPoppins: "Poppins", sans-serif;
   --ffNunitoSans: "Nunito Sans", sans-serif;
 
+  --bodyBgColor: #f0f8ff;
+  --colorWhite: #fff;
+
   --pendingBG: #ffa500;
   --completedBG: #28a745;
   --urgentActionBG: #dc3545;
@@ -20,6 +23,10 @@ svg {
 }
 li {
   list-style: none;
+}
+/*  */
+body {
+  background: var(--bodyBgColor);
 }
 /*  */
 header {
@@ -46,15 +53,14 @@ header {
   align-items: center;
   padding: 4px;
   position: relative;
-  background: rgb(245, 245, 245);
-  border-radius: 12px;
+  background: var(--bodyBgColor);
   position: sticky;
   top: 0px;
   z-index: 1;
 }
 .row label {
   position: absolute;
-  background: rgb(245, 245, 245);
+  background: var(--bodyBgColor);
   padding-left: 18px;
   width: 100%;
   left: 0;
@@ -70,6 +76,8 @@ header {
   font-size: 1em;
   border: 0;
   background: transparent;
+  box-shadow: 0 0 6px -4px;
+  border-radius: 12px 0 0 12px;
 }
 .row #input-box:focus {
   outline: 0;
@@ -85,7 +93,7 @@ header {
 #addButton {
   position: absolute;
   background: #007bff;
-  color: white;
+  color: var(--colorWhite);
   font-size: 1em;
   right: 0;
   height: 100%;
@@ -105,14 +113,17 @@ header {
   display: flex;
   flex-direction: column;
 }
+
 .tasks-ul li {
   padding: 12px;
   display: flex;
   flex-direction: column;
   border-radius: 12px;
   cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.25);
   margin-bottom: 6px;
+
+  background: var(--colorWhite);
+  box-shadow: 0 0 6px -4px;
 }
 .task-text {
   position: relative;
@@ -162,7 +173,7 @@ li.completed .task-text::before {
 }
 li.completed .task-Status {
   background: var(--completedBG);
-  color: white;
+  color: var(--colorWhite);
 }
 /*  */
 .date-header {
@@ -184,7 +195,7 @@ li.completed .task-Status {
   margin-left: 10px;
   padding: 6px 18px;
   background-color: #ff4444;
-  color: white;
+  color: var(--colorWhite);
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -216,17 +227,24 @@ li.completed .task-Status {
   padding: 12px;
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 6px;
 }
 .pending-tasks-cnt span:nth-child(1),
 .completed-tasks-cnt > span:nth-child(1) {
-  font-size: 0.8em;
+  font-size: 0.75em;
   align-content: center;
+}
+.pending-tasks-cnt span:nth-child(2),
+.completed-tasks-cnt > span:nth-child(2) {
+  min-width: 36px;
+  text-align: center;
+  font-family: var(--ffNunitoSans);
+  font-weight: 600;
 }
 .pending-tasks-cnt {
   background: var(--pendingBG);
 }
 .completed-tasks-cnt {
   background: var(--completedBG);
-  color: white;
+  color: var(--colorWhite);
 }
