@@ -110,6 +110,9 @@ function addTask(text, status = "Pending", time, date, timestamp) {
   li.append(taskText, taskExtraInfo);
   if (status === "Completed") li.classList.add("completed");
   taskList.appendChild(li);
+  if (navigator) {
+    navigator.vibrate(25, 50, 50);
+  }
 
   // Delete button handler with confirmation
   deleteButton.addEventListener("click", () => {
@@ -117,6 +120,7 @@ function addTask(text, status = "Pending", time, date, timestamp) {
     if (confirmDelete) {
       li.remove();
       saveTasks(); // Update localStorage after removal
+      updateTasksCount();
     }
   });
   // Touch handling (only for completing tasks)
@@ -198,6 +202,9 @@ function toggleTaskStatus(taskElement, forceComplete = false) {
   taskElement.classList.toggle("completed", isCompleted);
   taskStatus.textContent = isCompleted ? "Completed" : "Pending";
   deleteButton.style.display = isCompleted ? "inline-block" : "none";
+  if (navigator) {
+    navigator.vibrate(25);
+  }
   saveTasks();
   updateTasksCount();
 }
