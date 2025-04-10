@@ -9,10 +9,11 @@
   "icons": [
     {
       "src": "/assets/icon.png",
-      "sizes": "100x100",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
   "orientation": "portrait",
   "scope": "/"
 }
+
