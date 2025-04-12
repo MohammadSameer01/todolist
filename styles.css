@@ -10,6 +10,9 @@
   --pendingBG: #ffa500;
   --completedBG: #28a745;
   --urgentActionBG: #dc3545;
+
+  --instaThemeColor1: rgba(142, 156, 123, 0.5);
+  --instaThemeColor2: rgba(125, 135, 110, 0.75);
 }
 * {
   margin: 0;
@@ -24,10 +27,29 @@ svg {
 li {
   list-style: none;
 }
+html {
+  background: #7d876e;
+}
 /*  */
 body {
   background: var(--bodyBgColor);
+  background: linear-gradient(var(--instaThemeColor1), var(--instaThemeColor2));
 }
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: url("https://img.freepik.com/free-vector/vector-white-lotus-flower-pad-pond-isolated-blur-background_1284-48393.jpg");
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+  background-position: center;
+  background-size: cover;
+
+  filter: blur(6px);
+}
+
 /*  */
 header {
   height: 60px;
@@ -45,6 +67,9 @@ header {
   font-size: 1.5em;
 }
 /*  */
+main {
+  min-height: 100dvh;
+}
 .container {
   padding: 12px;
 }
@@ -55,9 +80,16 @@ header {
   position: relative;
   background: var(--bodyBgColor);
   position: sticky;
-  top: 0px;
+  top: 12px;
   z-index: 1;
+
+  box-shadow: 0 0 12px -6px;
+  border-radius: 12px;
+
+  background: transparent;
+  backdrop-filter: blur(12px);
 }
+
 .row label {
   position: absolute;
   background: var(--bodyBgColor);
@@ -69,6 +101,9 @@ header {
   align-content: center;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  border-radius: 12px;
+
+  display: none;
 }
 .row #input-box {
   width: calc(100% - 85px);
@@ -76,12 +111,18 @@ header {
   font-size: 1em;
   border: 0;
   background: transparent;
-  box-shadow: 0 0 6px -4px;
   border-radius: 12px 0 0 12px;
+
+  color: var(--colorWhite);
+  z-index: 1;
 }
 .row #input-box:focus {
   outline: 0;
 }
+.row #input-box::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .labelActive {
   font-size: 0.7em;
   transform: translate(-12px, -40px);
@@ -123,7 +164,13 @@ header {
   margin-bottom: 6px;
 
   background: var(--colorWhite);
-  box-shadow: 0 0 6px -4px;
+  /* box-shadow: 0 0 6px -4px black; */
+
+  background-size: contain;
+  background: rgba(0, 0, 0, 0.25);
+  background-image: url(/assets/noiseEffect-50.avif);
+  background-position: center;
+  color: var(--colorWhite);
 }
 .task-text {
   position: relative;
@@ -159,6 +206,7 @@ header {
   place-items: center;
   padding: 6px;
   color: #444;
+  color: rgba(255, 255, 255, 0.5);
 }
 /*  */
 li.completed {
